@@ -174,12 +174,10 @@ export default function About() {
       </div>
 
       <CTABanner
-        title="We're hiring builders"
-        subtitle="If you believe AI engineering is the defining technical craft of our era — you'll fit right in."
-        primaryLabel="View Open Roles →"
-        primaryTo="/careers"
-        secondaryLabel="Get in Touch"
-        secondaryTo="/contact"
+        title="Stay in touch"
+        subtitle="We're always excited to connect with talented engineers, researchers, and builders who want to shape the future of AI."
+        primaryLabel="Get in Touch →"
+        primaryTo="/contact"
       />
     </>
   )

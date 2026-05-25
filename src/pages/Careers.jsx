@@ -1,18 +1,10 @@
-import { MapPin, Clock, ArrowUpRight } from 'lucide-react'
+import { Sparkles } from 'lucide-react'
 import { useHeroAnimation, useScrollReveal } from '../hooks/useScrollReveal'
 import Container from '../components/ui/Container'
 import SectionLabel from '../components/ui/SectionLabel'
 import Button from '../components/ui/Button'
 import CTABanner from '../components/sections/CTABanner'
 import { FloatingDots, GridAccent } from '../components/illustrations/DecorativeElements'
-
-const OPENINGS = [
-  { title:'Senior ML Engineer — LLM Systems', location:'Remote / Global', type:'Full-time', note:'Founding hire', dept:'Engineering', color:'#8B5CF6', bg:'rgba(139,92,246,0.08)' },
-  { title:'Staff MLOps Engineer', location:'Remote / Global', type:'Full-time', note:'Founding hire', dept:'Engineering', color:'#8B5CF6', bg:'rgba(139,92,246,0.08)' },
-  { title:'AI Research Scientist — NLP', location:'Remote / Hybrid', type:'Full-time', note:'Founding hire', dept:'Research', color:'#10B981', bg:'rgba(16,185,129,0.08)' },
-  { title:'AI Product Designer', location:'Remote / Global', type:'Full-time', note:'Founding hire', dept:'Design', color:'#3B82F6', bg:'rgba(59,130,246,0.08)' },
-  { title:'Enterprise Account Executive', location:'Remote / Hybrid', type:'Full-time', note:'Commission + equity', dept:'Sales', color:'#F59E0B', bg:'rgba(245,158,11,0.08)' },
-]
 
 const PERKS = [
   { emoji:'🌍', label:'Remote-first', sub:'Work from anywhere globally' },
@@ -23,7 +15,7 @@ const PERKS = [
 
 export default function Careers() {
   const heroRef = useHeroAnimation()
-  const openRef = useScrollReveal({ selector: '.orow', stagger: 0.07, x: -12, y: 0 })
+  const openRef = useScrollReveal({ selector: '.reveal-card', y: 20 })
 
   return (
     <>
@@ -66,57 +58,62 @@ export default function Careers() {
           </Container>
         </section>
 
-        {/* OPENINGS */}
-        <section className="py-20 bg-white" ref={openRef}>
+        {/* OPENINGS SECTION (Empty State) */}
+        <section className="py-24 bg-white" ref={openRef}>
           <Container>
-            <div className="flex items-end justify-between mb-12 flex-wrap gap-4">
-              <div>
-                <div className="mb-2"><SectionLabel>Open Roles</SectionLabel></div>
-                <h2 className="font-heading font-bold tracking-[-0.025em] text-ink" style={{ fontSize: 'clamp(1.7rem, 3vw, 2.4rem)' }}>
-                  Current openings
-                </h2>
-              </div>
-              <span className="text-[0.85rem] text-ink-soft">{OPENINGS.length} positions</span>
+            <div className="text-center mb-6">
+              <div className="mb-2 justify-center flex"><SectionLabel>Opportunities</SectionLabel></div>
+              <h2 className="font-heading font-bold tracking-[-0.025em] text-ink" style={{ fontSize: 'clamp(1.7rem, 3vw, 2.4rem)' }}>
+                Join the team
+              </h2>
             </div>
 
-            <div className="space-y-3">
-              {OPENINGS.map((o, i) => (
-                <div key={i} className="orow group flex items-center justify-between p-5 rounded-2xl border border-light-3 bg-white transition-all duration-250 hover:border-transparent hover:shadow-[0_6px_24px_rgba(0,0,0,0.08)] hover:bg-light/60 cursor-pointer gap-4">
-                  <div className="flex items-start gap-4">
-                    <div className="w-2 h-2 rounded-full mt-2 flex-shrink-0 transition-transform duration-300 group-hover:scale-125" style={{ background: o.color }} />
-                    <div>
-                      <div className="font-heading text-[0.95rem] font-bold text-ink mb-1.5 group-hover:text-brand-purple transition-colors">{o.title}</div>
-                      <div className="flex items-center gap-4 flex-wrap">
-                        <span className="flex items-center gap-1.5 text-[0.78rem] text-ink-soft"><MapPin size={11} />{o.location}</span>
-                        <span className="flex items-center gap-1.5 text-[0.78rem] text-ink-soft"><Clock size={11} />{o.type}</span>
-                        <span className="text-[0.78rem] text-ink-soft">· {o.note}</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="flex items-center gap-3 flex-shrink-0">
-                    <span className="text-[10px] font-bold uppercase tracking-[0.1em] px-2.5 py-1 rounded-full" style={{ color: o.color, background: o.bg }}>{o.dept}</span>
-                    <div className="w-8 h-8 rounded-full border flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-250 -translate-x-1 group-hover:translate-x-0"
-                      style={{ borderColor: o.color + '40', color: o.color }}>
-                      <ArrowUpRight size={13} />
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            {/* CTA row */}
-            <div className="mt-8 p-7 bg-light border border-light-3 rounded-2xl flex flex-col md:flex-row items-start md:items-center justify-between gap-5">
-              <div>
-                <h4 className="font-heading text-base font-bold text-ink mb-1">Don't see your role?</h4>
-                <p className="text-[0.84rem] text-ink-soft">We're always interested in exceptional people. Send us your background and tell us how you'd contribute.</p>
+            <div className="reveal-card max-w-[720px] mx-auto text-center mt-10 p-10 md:p-14 rounded-3xl relative overflow-hidden transition-all duration-300 hover:shadow-xl"
+              style={{
+                background: 'radial-gradient(120% 120% at 50% 0%, #ffffff 60%, rgba(139,92,246,0.02) 100%)',
+                border: '1px solid rgba(139, 92, 246, 0.12)',
+                boxShadow: '0 10px 40px -15px rgba(139, 92, 246, 0.08), 0 2px 12px -4px rgba(0,0,0,0.02)'
+              }}>
+              {/* Top gradient glow bar */}
+              <div className="absolute top-0 inset-x-0 h-[2px]" style={{ background: 'linear-gradient(90deg, transparent, var(--purple), var(--teal), transparent)' }} />
+              
+              {/* Sparkles Icon Bubble */}
+              <div className="w-14 h-14 rounded-2xl mx-auto mb-8 flex items-center justify-center relative float-2"
+                style={{
+                  background: 'linear-gradient(135deg, rgba(139, 92, 246, 0.08) 0%, rgba(16, 185, 129, 0.08) 100%)',
+                  border: '1px solid rgba(139, 92, 246, 0.15)'
+                }}>
+                <div className="absolute inset-0 rounded-2xl blur-md opacity-20" style={{ background: 'linear-gradient(135deg, var(--purple), var(--teal))' }} />
+                <Sparkles className="relative z-10 w-6 h-6" style={{ color: 'var(--purple)' }} />
               </div>
-              <Button variant="primary" to="/contact" className="flex-shrink-0">Get in Touch →</Button>
+
+              <h3 className="font-heading font-extrabold text-[1.45rem] tracking-[-0.02em] text-ink mb-4 leading-tight">
+                We’re not hiring at the moment.
+              </h3>
+              
+              <p className="text-[0.93rem] text-ink-soft leading-relaxed max-w-[520px] mx-auto mb-7">
+                Thank you for your interest in joining our team. While we don’t have any open positions currently, we’re always excited to connect with talented people who are passionate about building great products and experiences.
+              </p>
+              
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-8 text-[0.8rem] font-medium"
+                style={{ background: 'var(--surface)', border: '1px solid var(--border)', color: 'var(--ink-soft)' }}>
+                <div className="w-1.5 h-1.5 rounded-full bg-teal ping-dot" style={{ background: 'var(--teal)' }} />
+                <span>Please check back later for future opportunities.</span>
+              </div>
+
+              <div className="deco-line mb-8" />
+
+              <div>
+                <p className="text-[0.82rem] text-ink-muted mb-4">Want to share your background for future considerations?</p>
+                <Button variant="primary" to="/contact" className="px-6 py-2.5 text-[0.88rem]">Let's Connect →</Button>
+              </div>
             </div>
           </Container>
         </section>
       </div>
 
-      <CTABanner title="Build with us from day one" subtitle="We're a small team doing big things. Every hire shapes the culture and the product." primaryLabel="View Open Roles" primaryTo="/careers" />
+      <CTABanner title="Stay in touch" subtitle="We're always excited to meet exceptional engineers, researchers, and builders. Drop us a message anytime." primaryLabel="Get in Touch" primaryTo="/contact" />
     </>
   )
 }
+
