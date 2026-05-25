@@ -4,30 +4,30 @@ import Button from '../components/ui/Button'
 import CTABanner from '../components/sections/CTABanner'
 
 const TEAM = [
-  // {
-  //   initials: 'DD',
-  //   name: 'Dinesh Doddaga',
-  //   role: 'Founder & CEO',
-  //   bio: 'Designer and Product Manager with a sharp eye for user experience. Leads the product vision at Vyuhon, translating complex AI capabilities into intuitive, human-centred interfaces.',
+  {
+    initials: 'DD',
+    name: 'Dinesh Doddaga',
+    role: 'Co-Founder & CEO',
+    bio: 'Designer and Product Manager with a sharp eye for user experience. Leads the product vision at Vyuhon, translating complex AI capabilities into intuitive, human-centred interfaces.',
 
-  //   gradA: '#8B5CF6', gradB: '#7C3AED',
-  // },
-  // // {
-  // //   initials: 'SD',
-  // //   name: 'Subhash Doddaga',
-  // //   role: 'Co-Founder',
-  // //   bio: 'Engineer at heart with a strong technical foundation spanning AI, full-stack development, and engineering leadership. Architects the decisions that make Vyuhon systems reliable.',
+    gradA: '#8B5CF6', gradB: '#7C3AED',
+  },
+  {
+    initials: 'SD',
+    name: 'Subhash Doddaga',
+    role: 'Co-Founder & CTO',
+    bio: 'Engineer at heart with a strong technical foundation spanning AI, full-stack development, and engineering leadership. Architects the decisions that make Vyuhon systems reliable.',
 
-  // //   gradA: '#10B981', gradB: '#059669',
-  // // },
-  // {
-  //   initials: 'JG',
-  //   name: 'Jagadeesh',
-  //   role: 'CPPO',
-  //   bio: 'Chief Product & People Officer. Bridges product management, project execution, and people operations, ensuring Vyuhon teams are aligned and building toward the right outcomes.',
+    gradA: '#10B981', gradB: '#059669',
+  },
+  {
+    initials: 'JG',
+    name: 'Jagadeesh',
+    role: 'CPPO',
+    bio: 'Chief Product & People Officer. Bridges product management, project execution, and people operations, ensuring Vyuhon teams are aligned and building toward the right outcomes.',
 
-  //   gradA: '#3B82F6', gradB: '#2563EB',
-  // },
+    gradA: '#3B82F6', gradB: '#2563EB',
+  },
 ]
 
 const VALUES = [
@@ -43,7 +43,7 @@ export default function About() {
   const heroRef = useHeroAnimation()
   const s1 = useScrollReveal({ selector: '.s1', stagger: 0.09, y: 18 })
   const s2 = useScrollReveal({ selector: '.s2', stagger: 0.07, y: 18 })
-  // const s3 = useScrollReveal({ selector: '.s3', stagger: 0.09, y: 18 })
+  const s3 = useScrollReveal({ selector: '.s3', stagger: 0.09, y: 18 })
 
   return (
     <>
@@ -140,7 +140,7 @@ export default function About() {
           </Container>
         </section>
 
-        {/* TEAM — commented out (no active members to display)
+        {/* TEAM */}
         <section className="section bg-white" ref={s3}>
           <Container>
             <div className="text-center max-w-[460px] mx-auto mb-12">
@@ -168,7 +168,6 @@ export default function About() {
             </div>
           </Container>
         </section>
-        */}
       </div>
 
       <CTABanner
