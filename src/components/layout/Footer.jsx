@@ -106,7 +106,7 @@ export default function Footer() {
               <div className="w-1.5 h-1.5 rounded-full relative z-10" style={{ background: 'var(--teal)' }}/>
             </div>
             <span className="text-[0.8rem] font-bold tracking-wide transition-colors duration-200 group-hover:text-white" style={{ color: 'rgba(16,185,129,0.9)' }}>
-              hello@vyuhon.com
+            vyuhontech@gmail.com
             </span>
           </a>
           
