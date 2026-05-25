@@ -169,7 +169,7 @@ function HeroSection() {
             </span>
           </div>
           <h1
-            className="font-heading font-extrabold text-white leading-[0.96] tracking-[-0.045em]"
+            className="font-heading font-extrabold text-white leading-[1.00] tracking-[-0.045em]"
             style={{ fontSize: 'clamp(3.6rem, 9vw, 8.8rem)', maxWidth: '82vw' }}>
             <span className="block overflow-hidden pb-[0.15em] -mb-[0.15em]">
               <span data-hero-word className="inline-block">Engineering</span>
