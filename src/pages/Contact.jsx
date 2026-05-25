@@ -6,7 +6,7 @@ import Container from '../components/ui/Container'
 const PATHS = [
   { Icon: Briefcase, color: '#8B5CF6', bg: 'rgba(139,92,246,0.08)', title: 'Start a Project', body: "Share what you're building and we'll put together a proposal within 48 hours.", cta: 'Send brief →' },
   { Icon: Phone, color: '#10B981', bg: 'rgba(16,185,129,0.08)', title: 'Book a Discovery Call', body: 'Free 60-minute conversation to explore your AI opportunities — no obligation.', cta: 'Schedule call →' },
-  { Icon: Mail, color: '#3B82F6', bg: 'rgba(59,130,246,0.08)', title: 'Email Us', body: 'vyuhontech@gmail.com — we respond to every message personally within 2 hours.', cta: 'Open email →' },
+  { Icon: Mail, color: '#3B82F6', bg: 'rgba(59,130,246,0.08)', title: 'Email Us', body: <><span className="font-bold" style={{ color: 'var(--purple)' }}>hello@vyuhon.com</span> — we respond to every message personally within 2 hours.</>, cta: 'Open email →' },
 ]
 
 const INP_BASE = "w-full rounded-xl px-4 py-3 text-[0.875rem] outline-none transition-all duration-200"

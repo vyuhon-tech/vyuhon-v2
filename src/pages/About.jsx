@@ -21,6 +21,14 @@ const TEAM = [
     gradA: '#10B981', gradB: '#059669',
   },
   {
+    initials: 'LK',
+    name: 'Lavanya Konda',
+    role: 'CFO',
+    bio: 'Lavanya brings deep expertise in technology and finance, helping drive the company to the next level. With a strong understanding of the tech industry and strategic financial management, she plays a key role in shaping growth, innovation, and long-term vision.',
+
+    gradA: '#F43F5E', gradB: '#E11D48',
+  },
+  {
     initials: 'JG',
     name: 'Jagadeesh',
     role: 'CPPO',
@@ -147,7 +155,7 @@ export default function About() {
               <div className="eyebrow mb-4">Founding Team</div>
               <h2 className="display-md text-ink">The people behind Vyuhon</h2>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
               {TEAM.map((t, i) => (
                 <div key={i}
                   className="s3 group relative p-7 text-center rounded-[var(--r-xl)] border cursor-default transition-all duration-300 overflow-hidden"
