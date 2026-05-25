@@ -1,11 +1,13 @@
 import { Link } from 'react-router-dom'
 import VyuhonLogo from '../ui/VyuhonLogo'
+import Container from '../ui/Container'
 
 const COLS = [
   { title:'Company', links:[{l:'About Us',to:'/about'},{l:'Careers',to:'/careers'},{l:'Insights',to:'/insights'}] },
   { title:'Services', links:[{l:'AI Strategy',to:'/services'},{l:'LLM Engineering',to:'/services'},{l:'MLOps',to:'/services'},{l:'VIP Platform',to:'/ai-platform'}] },
-  { title:'Academy', links:[{l:'All Programs',to:'/academy'},{l:'AI Tech Skills',to:'/academy'},{l:'Design with AI',to:'/academy'},{l:'Team Training',to:'/academy'}] },
+  // { title:'Academy', links:[{l:'All Programs',to:'/academy'},{l:'AI Tech Skills',to:'/academy'},{l:'Design with AI',to:'/academy'},{l:'Team Training',to:'/academy'}] },
 ]
+
 const SOCIALS = [
   { 
     label: 'LinkedIn', 
@@ -26,48 +28,90 @@ const SOCIALS = [
 
 export default function Footer() {
   return (
-    <footer style={{ background:'var(--dark2)', borderTop:'1px solid rgba(255,255,255,0.06)' }} className="pt-14 pb-7">
-      <div className="max-w-[1200px] mx-auto px-10 max-sm:px-5">
-        <div className="grid grid-cols-1 md:grid-cols-[1.8fr_1fr_1fr_1fr] gap-10 mb-12">
+    <footer className="relative overflow-hidden pt-20 pb-8" style={{ background: '#050509' }}>
+      {/* Subtle Background Glows */}
+      <div className="absolute top-0 left-1/4 w-[600px] h-[500px] rounded-full blur-[140px] pointer-events-none -translate-y-1/2 opacity-60" style={{ background: 'rgba(139,92,246,0.07)' }} />
+      <div className="absolute top-0 right-1/4 w-[500px] h-[500px] rounded-full blur-[130px] pointer-events-none -translate-y-1/2 opacity-60" style={{ background: 'rgba(16,185,129,0.06)' }} />
+      
+      {/* Top Gradient Border */}
+      <div className="absolute top-0 inset-x-0 h-[1px]" style={{ background: 'linear-gradient(90deg, rgba(255,255,255,0), rgba(139,92,246,0.25), rgba(16,185,129,0.25), rgba(255,255,255,0))' }} />
+
+      <Container>
+        {/* Main Footer Content */}
+        <div className="grid grid-cols-1 md:grid-cols-[2fr_1fr_1fr] gap-12 lg:gap-20 mb-16 relative z-10">
+          
+          {/* Brand Column */}
           <div>
-            <VyuhonLogo light={false}/>
-            <p className="mt-4 text-[0.84rem] leading-relaxed max-w-[240px]" style={{ color:'rgba(255,255,255,0.3)' }}>
-              Engineering the AI-native enterprise — from strategy to production.
+            <div className="mb-6">
+              <VyuhonLogo light={false} width={125}/>
+            </div>
+            <p className="text-[0.95rem] leading-[1.8] max-w-[340px] mb-8 font-medium" style={{ color: 'rgba(255,255,255,0.45)' }}>
+              Engineering the AI-native enterprise — from strategy to production. We build systems that perform when it matters.
             </p>
-            <div className="flex gap-2 mt-5">
+            
+            {/* Socials */}
+            <div className="flex gap-3">
               {SOCIALS.map(s => (
                 <a key={s.label} href={s.url} target="_blank" rel="noopener noreferrer"
-                  className="w-8 h-8 rounded-[var(--r-sm)] flex items-center justify-center cursor-pointer transition-all duration-200"
-                  style={{ background:'rgba(255,255,255,0.05)', border:'1px solid rgba(255,255,255,0.07)', color:'rgba(255,255,255,0.3)', display:'flex' }}
-                  onMouseEnter={e=>{e.currentTarget.style.background='rgba(139,92,246,0.14)';e.currentTarget.style.borderColor='rgba(139,92,246,0.28)';e.currentTarget.style.color='var(--purple)';}}
-                  onMouseLeave={e=>{e.currentTarget.style.background='rgba(255,255,255,0.05)';e.currentTarget.style.borderColor='rgba(255,255,255,0.07)';e.currentTarget.style.color='rgba(255,255,255,0.3)';}}>
-                  <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d={s.path}/></svg>
+                  className="group relative w-[42px] h-[42px] rounded-xl flex items-center justify-center overflow-hidden transition-all duration-300"
+                  style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.08)' }}>
+                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                    style={{ background: 'linear-gradient(135deg, rgba(139,92,246,0.25), rgba(16,185,129,0.25))' }} />
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" 
+                    className="relative z-10 transition-all duration-300 group-hover:scale-110 group-hover:text-white" 
+                    style={{ color: 'rgba(255,255,255,0.5)' }}>
+                    <path d={s.path}/>
+                  </svg>
                 </a>
               ))}
             </div>
           </div>
+
+          {/* Links Columns */}
           {COLS.map(col => (
             <div key={col.title}>
-              <h5 className="text-[10.5px] font-bold tracking-[0.09em] uppercase mb-4" style={{ color:'rgba(255,255,255,0.28)' }}>{col.title}</h5>
-              {col.links.map(link => (
-                <Link key={link.l} to={link.to} className="block text-[0.83rem] mb-2.5 transition-colors duration-200"
-                  style={{ color:'rgba(255,255,255,0.38)' }}
-                  onMouseEnter={e=>e.currentTarget.style.color='rgba(255,255,255,0.82)'}
-                  onMouseLeave={e=>e.currentTarget.style.color='rgba(255,255,255,0.38)'}>
-                  {link.l}
-                </Link>
-              ))}
+              <h5 className="text-[0.78rem] font-bold tracking-[0.15em] uppercase mb-7" style={{ color: '#fff' }}>
+                {col.title}
+              </h5>
+              <div className="flex flex-col gap-4">
+                {col.links.map(link => (
+                  <Link key={link.l} to={link.to} 
+                    className="group inline-flex items-center text-[0.92rem] transition-all duration-300 w-fit font-medium"
+                    style={{ color: 'rgba(255,255,255,0.45)' }}
+                    onMouseEnter={e => { e.currentTarget.style.color = '#fff'; e.currentTarget.style.transform = 'translateX(5px)'; }}
+                    onMouseLeave={e => { e.currentTarget.style.color = 'rgba(255,255,255,0.45)'; e.currentTarget.style.transform = 'translateX(0)'; }}>
+                    {link.l}
+                  </Link>
+                ))}
+              </div>
             </div>
           ))}
         </div>
-        <div style={{ borderTop:'1px solid rgba(255,255,255,0.06)' }} className="pt-5 flex flex-col md:flex-row items-center justify-between gap-3">
-          <p className="text-[0.75rem]" style={{ color:'rgba(255,255,255,0.2)' }}>© 2025 Vyuhon. All rights reserved.</p>
-          <div className="flex items-center gap-2 px-3 py-1.5 rounded-full" style={{ background:'rgba(16,185,129,0.07)', border:'1px solid rgba(16,185,129,0.13)' }}>
-            <div className="w-1.5 h-1.5 rounded-full ping-dot" style={{ background:'var(--teal)' }}/>
-            <span className="text-[11px]" style={{ color:'rgba(16,185,129,0.6)' }}>hello@vyuhon.com</span>
+
+        {/* Bottom Bar */}
+        <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-5 relative z-10"
+          style={{ borderTop: '1px solid rgba(255,255,255,0.08)' }}>
+          
+          <div className="flex flex-wrap items-center gap-6 text-[0.85rem]" style={{ color: 'rgba(255,255,255,0.35)' }}>
+            <span>© {new Date().getFullYear()} Vyuhon. All rights reserved.</span>
+            <div className="hidden md:block w-[3px] h-[3px] rounded-full" style={{ background: 'rgba(255,255,255,0.2)' }} />
+            <Link to="#" className="hover:text-white transition-colors duration-200">Privacy Policy</Link>
+            <Link to="#" className="hover:text-white transition-colors duration-200">Terms of Service</Link>
           </div>
+
+          <a href="mailto:hello@vyuhon.com" className="group flex items-center gap-3 px-5 py-2.5 rounded-full transition-all duration-300 hover:-translate-y-0.5" 
+            style={{ background: 'rgba(16,185,129,0.06)', border: '1px solid rgba(16,185,129,0.18)' }}>
+            <div className="relative flex items-center justify-center w-2 h-2">
+              <div className="absolute inset-0 rounded-full ping-dot opacity-80" style={{ background: 'var(--teal)' }}/>
+              <div className="w-1.5 h-1.5 rounded-full relative z-10" style={{ background: 'var(--teal)' }}/>
+            </div>
+            <span className="text-[0.8rem] font-bold tracking-wide transition-colors duration-200 group-hover:text-white" style={{ color: 'rgba(16,185,129,0.9)' }}>
+              hello@vyuhon.com
+            </span>
+          </a>
+          
         </div>
-      </div>
+      </Container>
     </footer>
   )
 }

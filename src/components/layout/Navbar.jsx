@@ -9,7 +9,7 @@ const NAV = [
   { label:'AI Platform', to:'/ai-platform' },
   { label:'About',       to:'/about' },
   { label:'Insights',    to:'/insights' },
-  { label:'Academy',     to:'/academy' },
+  // { label:'Academy',     to:'/academy' },
   { label:'Careers',     to:'/careers' },
 ]
 
