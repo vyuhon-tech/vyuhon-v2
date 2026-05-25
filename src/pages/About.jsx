@@ -8,6 +8,7 @@ const TEAM = [
     initials: 'DD',
     name: 'Dinesh Doddaga',
     role: 'Co-Founder & CEO',
+    image: '/team-dinesh.jpg',
     bio: 'Designer and Product Manager with a sharp eye for user experience. Leads the product vision at Vyuhon, translating complex AI capabilities into intuitive, human-centred interfaces.',
 
     gradA: '#8B5CF6', gradB: '#7C3AED',
@@ -16,6 +17,7 @@ const TEAM = [
     initials: 'SD',
     name: 'Subhash Doddaga',
     role: 'Co-Founder & CTO',
+    image: '/team-subhash.jpg',
     bio: 'Engineer at heart with a strong technical foundation spanning AI, full-stack development, and engineering leadership. Architects the decisions that make Vyuhon systems reliable.',
 
     gradA: '#10B981', gradB: '#059669',
@@ -30,7 +32,7 @@ const TEAM = [
   },
   {
     initials: 'JG',
-    name: 'Jagadeesh',
+    name: 'Jagadeesh S',
     role: 'CPPO',
     bio: 'Chief Product & People Officer. Bridges product management, project execution, and people operations, ensuring Vyuhon teams are aligned and building toward the right outcomes.',
 
@@ -151,26 +153,36 @@ export default function About() {
         {/* TEAM */}
         <section className="section bg-white" ref={s3}>
           <Container>
-            <div className="text-center max-w-[460px] mx-auto mb-12">
+            <div className="text-center max-w-[460px] mx-auto mb-16">
               <div className="eyebrow mb-4">Founding Team</div>
               <h2 className="display-md text-ink">The people behind Vyuhon</h2>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-10">
               {TEAM.map((t, i) => (
-                <div key={i}
-                  className="s3 group relative p-7 text-center rounded-[var(--r-xl)] border cursor-default transition-all duration-300 overflow-hidden"
-                  style={{ background: 'var(--surface)', borderColor: 'var(--border)' }}
-                  onMouseEnter={e => { e.currentTarget.style.boxShadow = 'var(--shadow-lg)'; e.currentTarget.style.transform = 'translateY(-5px)'; e.currentTarget.style.borderColor = 'rgba(139,92,246,0.22)'; }}
-                  onMouseLeave={e => { e.currentTarget.style.boxShadow = 'none'; e.currentTarget.style.transform = ''; e.currentTarget.style.borderColor = 'var(--border)'; }}>
-                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-400 pointer-events-none"
-                    style={{ background: `radial-gradient(circle at 50% 0%, ${t.gradA}08, transparent 65%)` }} />
-                  <div className="w-[64px] h-[64px] rounded-full mx-auto mb-4 flex items-center justify-center font-heading text-lg font-extrabold text-white relative"
-                    style={{ background: `linear-gradient(135deg,${t.gradA},${t.gradB})`, boxShadow: `0 6px 20px ${t.gradA}28` }}>
-                    {t.initials}
+                <div key={i} className="s3 group relative cursor-default"
+                  onMouseEnter={e => {
+                    const nameEl = e.currentTarget.querySelector('h3');
+                    if (nameEl) nameEl.style.color = t.gradA;
+                  }}
+                  onMouseLeave={e => {
+                    const nameEl = e.currentTarget.querySelector('h3');
+                    if (nameEl) nameEl.style.color = '';
+                  }}>
+                  <div className="w-full aspect-[4/3.2] rounded-2xl mb-5 flex items-center justify-center relative overflow-hidden"
+                    style={{ background: '#EFF4FF' }}>
+                    {t.image ? (
+                      <img src={t.image} alt={t.name} className="w-full h-full object-cover" />
+                    ) : (
+                      <div className="font-heading text-[3.5rem] font-extrabold"
+                        style={{ background: `linear-gradient(135deg,${t.gradA},${t.gradB})`, WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
+                        {t.initials}
+                      </div>
+                    )}
                   </div>
-                  <div className="font-heading text-[0.97rem] font-bold text-ink mb-0.5">{t.name}</div>
-                  <div className="text-[0.69rem] font-bold uppercase tracking-[0.07em] mb-3" style={{ color: t.gradA }}>{t.role}</div>
-                  <p className="body-sm text-[0.77rem] leading-relaxed">{t.bio}</p>
+                  <div className="text-left px-1">
+                    <h3 className="font-heading text-[1.15rem] font-bold text-ink mb-1 transition-colors duration-300">{t.name}</h3>
+                    <div className="text-[0.9rem] leading-snug" style={{ color: 'var(--ink-soft)' }}>{t.role}</div>
+                  </div>
                 </div>
               ))}
             </div>
