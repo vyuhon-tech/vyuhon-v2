@@ -99,7 +99,7 @@ export default function Footer() {
             <Link to="#" className="hover:text-white transition-colors duration-200">Terms of Service</Link>
           </div>
 
-          <a href="mailto:hello@vyuhon.com" className="group flex items-center gap-3 px-5 py-2.5 rounded-full transition-all duration-300 hover:-translate-y-0.5" 
+          <a href="mailto:vyuhontech@gmail.com" className="group flex items-center gap-3 px-5 py-2.5 rounded-full transition-all duration-300 hover:-translate-y-0.5" 
             style={{ background: 'rgba(16,185,129,0.06)', border: '1px solid rgba(16,185,129,0.18)' }}>
             <div className="relative flex items-center justify-center w-2 h-2">
               <div className="absolute inset-0 rounded-full ping-dot opacity-80" style={{ background: 'var(--teal)' }}/>
