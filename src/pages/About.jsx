@@ -2,6 +2,7 @@ import { useHeroAnimation, useScrollReveal } from '../hooks/useScrollReveal'
 import Container from '../components/ui/Container'
 import Button from '../components/ui/Button'
 import CTABanner from '../components/sections/CTABanner'
+import SEO from '../components/SEO'
 
 const TEAM = [
   {
@@ -57,6 +58,11 @@ export default function About() {
 
   return (
     <>
+      <SEO 
+        title="About Vyuhon | Our Story & Team" 
+        description="Vyuhon was founded by a team who spent years in the gap between AI research and real deployment. We are an AI-first engineering studio."
+        url="/about" 
+      />
       <div style={{ paddingTop: '68px' }}>
 
         {/* HERO */}
@@ -171,7 +177,7 @@ export default function About() {
                   <div className="w-full aspect-[4/3.2] rounded-2xl mb-5 flex items-center justify-center relative overflow-hidden"
                     style={{ background: '#EFF4FF' }}>
                     {t.image ? (
-                      <img src={t.image} alt={t.name} className="w-full h-full object-cover" />
+                      <img src={t.image} alt={t.name} title={t.name} loading="lazy" className="w-full h-full object-cover" />
                     ) : (
                       <div className="font-heading text-[3.5rem] font-extrabold"
                         style={{ background: `linear-gradient(135deg,${t.gradA},${t.gradB})`, WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>

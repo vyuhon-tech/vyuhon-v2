@@ -5,6 +5,7 @@ import SectionLabel from '../components/ui/SectionLabel'
 import Button from '../components/ui/Button'
 import CTABanner from '../components/sections/CTABanner'
 import { FloatingDots, GridAccent } from '../components/illustrations/DecorativeElements'
+import SEO from '../components/SEO'
 
 const PERKS = [
   { emoji:'🌍', label:'Remote-first', sub:'Work from anywhere globally' },
@@ -19,6 +20,11 @@ export default function Careers() {
 
   return (
     <>
+      <SEO 
+        title="Careers at Vyuhon | Work on AI Problems That Matter" 
+        description="Join our team of engineers and researchers building the future of AI-native systems. Explore open positions at Vyuhon."
+        url="/careers" 
+      />
       <div style={{ paddingTop: '68px' }}>
         {/* HERO - dark */}
         <section ref={heroRef} className="relative py-24 overflow-hidden" style={{ background: '#0A0A0F', minHeight: 420 }}>

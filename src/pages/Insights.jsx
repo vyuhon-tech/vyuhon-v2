@@ -3,6 +3,7 @@ import { ArrowUpRight } from 'lucide-react'
 import { useHeroAnimation, useScrollReveal } from '../hooks/useScrollReveal'
 import Container from '../components/ui/Container'
 import { POSTS } from '../data/blogPosts'
+import SEO from '../components/SEO'
 
 function FeatCard({ p }) {
   return (
@@ -68,6 +69,11 @@ export default function Insights() {
 
   return (
     <div style={{ paddingTop:'68px' }}>
+      <SEO 
+        title="Insights | Vyuhon" 
+        description="Research, engineering deep-dives, and strategic frameworks from the Vyuhon team."
+        url="/insights" 
+      />
       {/* Dark hero header */}
       <section ref={heroRef} className="relative py-20 overflow-hidden"
         style={{ background:'linear-gradient(160deg, #09090F 0%, #0A0C18 55%, #08100F 100%)', minHeight:380 }}>

@@ -2,6 +2,7 @@ import { useState, useRef, useEffect } from 'react'
 import { ArrowRight, Briefcase, Phone, Mail, MapPin, Clock } from 'lucide-react'
 import { useHeroAnimation, useScrollReveal } from '../hooks/useScrollReveal'
 import Container from '../components/ui/Container'
+import SEO from '../components/SEO'
 
 const PATHS = [
   { Icon: Briefcase, color: '#8B5CF6', bg: 'rgba(139,92,246,0.08)', title: 'Start a Project', body: "Share what you're building and we'll put together a proposal within 48 hours.", cta: 'Send brief →' },
@@ -22,6 +23,11 @@ export default function Contact() {
 
   return (
     <div style={{ paddingTop: '68px', minHeight: '100vh' }} className="bg-white">
+      <SEO 
+        title="Contact Vyuhon | Let's Build Together" 
+        description="Whether you're exploring your first AI initiative or scaling an existing platform, we're ready to listen, advise, and partner."
+        url="/contact" 
+      />
 
       {/* ── DARK HERO HEADER ── */}
       <section ref={heroRef} className="relative overflow-hidden py-20"

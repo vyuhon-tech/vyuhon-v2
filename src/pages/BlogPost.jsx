@@ -6,6 +6,7 @@ import { getPost, POSTS } from '../data/blogPosts'
 import Container from '../components/ui/Container'
 import Button from '../components/ui/Button'
 import { gsap } from 'gsap'
+import SEO from '../components/SEO'
 
 // ── Banner illustration: abstract gradient with grid ──────────────────────
 function PostBanner({ color, bg, cat }) {
@@ -120,6 +121,12 @@ export default function BlogPost() {
 
   return (
     <div style={{ paddingTop: '68px', background: '#fff' }}>
+      <SEO 
+        title={`${post.title} | Vyuhon Insights`} 
+        description={post.intro || post.exc} 
+        type="article"
+        url={`/insights/${post.slug}`}
+      />
 
       {/* ── Dark hero header ── */}
       <section className="relative py-16 overflow-hidden"

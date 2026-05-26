@@ -4,6 +4,7 @@ import { useHeroAnimation, useScrollReveal } from '../hooks/useScrollReveal'
 import Button from '../components/ui/Button'
 import Container from '../components/ui/Container'
 import CTABanner from '../components/sections/CTABanner'
+import SEO from '../components/SEO'
 
 // ─── STAR FIELD canvas ────────────────────────────────────────────────────
 function StarField() {
@@ -576,6 +577,11 @@ function WhySection() {
 export default function Home() {
   return (
     <>
+      <SEO 
+        title="Vyuhon | AI-First Engineering Studio" 
+        description="We partner with forward-thinking organisations to architect and build production-grade AI systems — from first principles to full-scale deployment."
+        url="/" 
+      />
       <HeroSection />
       <VisionSection />
       <CapabilitiesSection />

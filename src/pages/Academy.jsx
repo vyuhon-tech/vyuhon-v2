@@ -4,6 +4,7 @@ import SectionLabel from '../components/ui/SectionLabel'
 import Button from '../components/ui/Button'
 import TrackCard from '../components/sections/TrackCard'
 import CTABanner from '../components/sections/CTABanner'
+import SEO from '../components/SEO'
 
 const TRACKS = [
   { accentGrad:'linear-gradient(135deg,#8B5CF6,#7C3AED)', iconBg:'rgba(139,92,246,0.1)', iconColor:'#8B5CF6', chipVariant:'purple', chipLabel:'Design', title:'Product Design with AI Bootcamp', description:'Master the intersection of design thinking and AI capabilities. Learn to design AI-native products, intelligent interfaces, and human-centered automation.', modules:['AI-first UX principles','Designing for AI outputs & uncertainty','Prompt engineering for designers','AI prototyping workflows'], duration:'8 weeks', format:'Live cohort' },
@@ -30,6 +31,11 @@ export default function Academy() {
 
   return (
     <>
+      <SEO 
+        title="Vyuhon Academy | Learn AI by Building With It" 
+        description="Structured learning programs designed for working professionals and teams. Taught by practitioners who've built AI in production."
+        url="/academy" 
+      />
       <div style={{ paddingTop: '68px' }}>
         {/* HERO - DARK */}
         <section ref={heroRef} className="py-20 relative overflow-hidden" style={{ background: '#0A0A0F' }}>

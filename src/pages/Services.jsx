@@ -4,6 +4,7 @@ import Container from '../components/ui/Container'
 import Button from '../components/ui/Button'
 import Chip from '../components/ui/Chip'
 import CTABanner from '../components/sections/CTABanner'
+import SEO from '../components/SEO'
 
 const SERVICES = [
   {
@@ -114,6 +115,11 @@ export default function Services() {
 
   return (
     <>
+      <SEO 
+        title="Services | Vyuhon" 
+        description="Full-spectrum AI engineering capabilities. From initial AI strategy through ongoing model operations, we operate as an embedded engineering partner."
+        url="/services" 
+      />
       <div style={{ paddingTop:'68px' }}>
 
         {/* PAGE HEADER — dark, consistent with AI Platform / Academy */}

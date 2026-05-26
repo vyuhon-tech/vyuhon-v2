@@ -6,6 +6,7 @@ import Chip from '../components/ui/Chip'
 import CTABanner from '../components/sections/CTABanner'
 import { GridAccent, FloatingDots, CornerAccent } from '../components/illustrations/DecorativeElements'
 import { Zap, Shield, Database, Activity, BarChart3, GitBranch } from 'lucide-react'
+import SEO from '../components/SEO'
 
 const FEATURES = [
   { span: 2, chipLabel: 'Core Engine', chipVariant: 'teal', Icon: GitBranch, iconColor: '#10B981', iconBg: 'rgba(16,185,129,0.1)',
@@ -32,6 +33,11 @@ export default function AIPlatform() {
 
   return (
     <>
+      <SEO 
+        title="Vyuhon Intelligence Platform | Enterprise AI" 
+        description="The infrastructure layer for enterprise AI. VIP unifies model management, data pipelines, evaluation frameworks, and deployment tooling."
+        url="/ai-platform" 
+      />
       <div style={{ paddingTop: '68px' }}>
         {/* HERO */}
         <section ref={heroRef} className="relative py-24 overflow-hidden" style={{ background: '#0A0A0F', minHeight: 440 }}>
