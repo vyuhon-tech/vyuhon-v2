@@ -17,7 +17,6 @@ const TEAM = [
     initials: 'SD',
     name: 'Subhash Doddaga',
     role: 'Co-Founder & CTO',
-    image: '/team-subhash.jpg',
     bio: 'Engineer at heart with a strong technical foundation spanning AI, full-stack development, and engineering leadership. Architects the decisions that make Vyuhon systems reliable.',
 
     gradA: '#10B981', gradB: '#059669',
