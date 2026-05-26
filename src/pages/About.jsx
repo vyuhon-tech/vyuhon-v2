@@ -33,6 +33,7 @@ const TEAM = [
     initials: 'JG',
     name: 'Jagadeesh S',
     role: 'CPPO',
+    image: '/team-jagadeesh.png',
     bio: 'Chief Product & People Officer. Bridges product management, project execution, and people operations, ensuring Vyuhon teams are aligned and building toward the right outcomes.',
 
     gradA: '#3B82F6', gradB: '#2563EB',
