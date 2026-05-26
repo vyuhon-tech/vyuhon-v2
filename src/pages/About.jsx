@@ -8,7 +8,7 @@ const TEAM = [
     initials: 'DD',
     name: 'Dinesh Doddaga',
     role: 'Co-Founder & CEO',
-    image: '/team-dinesh-v2.png',
+    image: '/team-dinesh-v3.jpeg',
     bio: 'Designer and Product Manager with a sharp eye for user experience. Leads the product vision at Vyuhon, translating complex AI capabilities into intuitive, human-centred interfaces.',
 
     gradA: '#8B5CF6', gradB: '#7C3AED',
@@ -21,14 +21,14 @@ const TEAM = [
 
     gradA: '#10B981', gradB: '#059669',
   },
-  {
-    initials: 'LK',
-    name: 'Lavanya Konda',
-    role: 'CFO',
-    bio: 'Lavanya brings deep expertise in technology and finance, helping drive the company to the next level. With a strong understanding of the tech industry and strategic financial management, she plays a key role in shaping growth, innovation, and long-term vision.',
+  // {
+  //   initials: 'LK',
+  //   name: 'Lavanya Konda',
+  //   role: 'CFO',
+  //   bio: 'Lavanya brings deep expertise in technology and finance, helping drive the company to the next level. With a strong understanding of the tech industry and strategic financial management, she plays a key role in shaping growth, innovation, and long-term vision.',
 
-    gradA: '#F43F5E', gradB: '#E11D48',
-  },
+  //   gradA: '#F43F5E', gradB: '#E11D48',
+  // },
   {
     initials: 'JG',
     name: 'Jagadeesh S',
@@ -156,7 +156,7 @@ export default function About() {
               <div className="eyebrow mb-4">Founding Team</div>
               <h2 className="display-md text-ink">The people behind Vyuhon</h2>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-10">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 max-w-[960px] mx-auto gap-x-8 gap-y-10">
               {TEAM.map((t, i) => (
                 <div key={i} className="s3 group relative cursor-default"
                   onMouseEnter={e => {
@@ -178,7 +178,7 @@ export default function About() {
                       </div>
                     )}
                   </div>
-                  <div className="text-left px-1">
+                  <div className="text-center px-1">
                     <h3 className="font-heading text-[1.15rem] font-bold text-ink mb-1 transition-colors duration-300">{t.name}</h3>
                     <div className="text-[0.9rem] leading-snug" style={{ color: 'var(--ink-soft)' }}>{t.role}</div>
                   </div>
