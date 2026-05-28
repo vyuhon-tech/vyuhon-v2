@@ -95,6 +95,8 @@ export default function Footer() {
           <div className="flex flex-wrap items-center gap-6 text-[0.85rem]" style={{ color: 'rgba(255,255,255,0.35)' }}>
             <span>© {new Date().getFullYear()} Vyuhon. All rights reserved.</span>
             <div className="hidden md:block w-[3px] h-[3px] rounded-full" style={{ background: 'rgba(255,255,255,0.2)' }} />
+            <span>MSME Registered • Government of India</span>
+            <div className="hidden md:block w-[3px] h-[3px] rounded-full" style={{ background: 'rgba(255,255,255,0.2)' }} />
             <Link to="#" className="hover:text-white transition-colors duration-200">Privacy Policy</Link>
             <Link to="#" className="hover:text-white transition-colors duration-200">Terms of Service</Link>
           </div>
