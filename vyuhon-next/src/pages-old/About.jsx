@@ -30,15 +30,15 @@ const TEAM = [
 
   //   gradA: '#F43F5E', gradB: '#E11D48',
   // },
-  // {
-  //   initials: 'JG',
-  //   name: 'Jagadeesh S',
-  //   role: 'CPPO',
-  //   image: '/team-jagadeesh.png',
-  //   bio: 'Chief Product & People Officer. Bridges product management, project execution, and people operations, ensuring Vyuhon teams are aligned and building toward the right outcomes.',
+  {
+    initials: 'JG',
+    name: 'Jagadeesh S',
+    role: 'CPPO',
+    image: '/team-jagadeesh.png',
+    bio: 'Chief Product & People Officer. Bridges product management, project execution, and people operations, ensuring Vyuhon teams are aligned and building toward the right outcomes.',
 
-  //   gradA: '#3B82F6', gradB: '#2563EB',
-  // },
+    gradA: '#3B82F6', gradB: '#2563EB',
+  },
 ]
 
 const VALUES = [
@@ -163,7 +163,7 @@ export default function About() {
               <div className="eyebrow mb-4">Founding Team</div>
               <h2 className="display-md text-ink">The people behind Vyuhon</h2>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 max-w-[720px] mx-auto gap-x-8 gap-y-10">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 max-w-[960px] mx-auto gap-x-8 gap-y-10">
               {TEAM.map((t, i) => (
                 <div key={i} className="s3 group relative cursor-default"
                   onMouseEnter={e => {

@@ -1,0 +1,188 @@
+@import "tailwindcss";
+
+/* ── TAILWIND v4 THEME CONFIGURATION ────────────────────────────────────── */
+@theme {
+  --font-heading: "Plus Jakarta Sans", sans-serif;
+  --font-body: Manrope, sans-serif;
+  --font-mono: "JetBrains Mono", Menlo, monospace;
+
+  --color-brand-purple:  #8B5CF6;
+  --color-brand-purple2: #7C3AED;
+  --color-brand-purple3: #6D28D9;
+  --color-brand-teal:    #10B981;
+  --color-brand-teal2:   #059669;
+  --color-brand-blue:    #3B82F6;
+  --color-brand-blue2:   #2563EB;
+
+  --color-dark:   #0A0A0F;
+  --color-dark-2: #111118;
+  --color-dark-3: #16161F;
+
+  --color-light:   #F8F8FC;
+  --color-light-2: #F2F2F8;
+  --color-light-3: #E4E4EF;
+
+  --color-ink:         #09090E;
+  --color-ink-mid:     #3A3A55;
+  --color-ink-soft:    #6B6B8A;
+  --color-ink-muted:   #9898B0;
+
+  --color-surface:   #F5F5FA;
+  --color-surface-2: #EFEFF7;
+
+  --spacing-18: 4.5rem;
+
+  --radius-xl2: 22px;
+  --radius-xl3: 28px;
+
+  --transition-duration-250: 250ms;
+  --transition-duration-350: 350ms;
+
+  --background-image-grad-purple: linear-gradient(135deg,#8B5CF6,#7C3AED);
+  --background-image-grad-teal:   linear-gradient(135deg,#10B981,#059669);
+  --background-image-grad-mix:    linear-gradient(135deg,#8B5CF6 0%,#3B82F6 50%,#10B981 100%);
+}
+
+/* ── DESIGN TOKENS ────────────────────────────────────────────────────────── */
+:root {
+  --purple:    #8B5CF6;
+  --purple2:   #7C3AED;
+  --purple3:   #6D28D9;
+  --teal:      #10B981;
+  --teal2:     #059669;
+  --blue:      #3B82F6;
+  --blue2:     #2563EB;
+  --amber:     #F59E0B;
+
+  --dark:      #0A0A0F;
+  --dark2:     #111118;
+  --dark3:     #16161F;
+
+  --off-white: #FAFAFF;
+  --surface:   #F5F5FA;
+  --surface2:  #EFEFF7;
+  --border:    #E4E4EF;
+  --border-s:  rgba(139,92,246,0.15);
+
+  --ink:       #09090E;
+  --ink-mid:   #3A3A55;
+  --ink-soft:  #6B6B8A;
+  --ink-muted: #9898B0;
+
+  --r-sm:  8px;
+  --r-md:  12px;
+  --r-lg:  16px;
+  --r-xl:  22px;
+  --r-2xl: 28px;
+
+  --shadow-sm:  0 1px 4px rgba(0,0,0,0.06), 0 2px 8px rgba(0,0,0,0.04);
+  --shadow-md:  0 4px 16px rgba(0,0,0,0.08), 0 2px 6px rgba(0,0,0,0.05);
+  --shadow-lg:  0 8px 32px rgba(0,0,0,0.1),  0 4px 12px rgba(0,0,0,0.06);
+  --shadow-xl:  0 16px 56px rgba(0,0,0,0.12),0 6px 16px rgba(0,0,0,0.06);
+  --shadow-p:   0 4px 20px rgba(139,92,246,0.28);
+  --shadow-p-lg:0 8px 36px rgba(139,92,246,0.38);
+}
+
+/* ── BASE ──────────────────────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+body { font-family: 'Manrope', sans-serif; color: var(--ink); background: #fff; overflow-x: hidden; line-height: 1.6; }
+a { color: inherit; text-decoration: none; }
+::selection { background: rgba(139,92,246,0.15); color: var(--purple2); }
+
+/* ── TYPOGRAPHY UTILITIES ── */
+.display-xl { font-family: 'Plus Jakarta Sans', sans-serif; font-size: clamp(3rem, 6vw, 5.4rem); font-weight: 800; line-height: 1.01; letter-spacing: -0.04em; }
+.display-lg { font-family: 'Plus Jakarta Sans', sans-serif; font-size: clamp(2.2rem, 4vw, 3.6rem); font-weight: 800; line-height: 1.04; letter-spacing: -0.035em; }
+.display-md { font-family: 'Plus Jakarta Sans', sans-serif; font-size: clamp(1.7rem, 2.8vw, 2.6rem); font-weight: 700; line-height: 1.08; letter-spacing: -0.025em; }
+.display-sm { font-family: 'Plus Jakarta Sans', sans-serif; font-size: clamp(1.2rem, 1.8vw, 1.5rem); font-weight: 700; line-height: 1.2;  letter-spacing: -0.015em; }
+.body-lg    { font-size: 1.0625rem; line-height: 1.82; color: var(--ink-mid); }
+.body-md    { font-size: 0.9375rem; line-height: 1.78; color: var(--ink-mid); }
+.body-sm    { font-size: 0.8125rem; line-height: 1.72; color: var(--ink-soft); }
+.label      { font-size: 10.5px; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; }
+
+/* ── EYEBROW LABELS ── */
+.eyebrow      { font-size: 10.5px; font-weight: 800; letter-spacing: 0.15em; text-transform: uppercase; color: var(--purple); display: inline-flex; align-items: center; gap: 6px; }
+.eyebrow::before { content: ''; width: 18px; height: 2px; background: var(--purple); border-radius: 2px; display: inline-block; }
+.eyebrow-teal { color: var(--teal2); }
+.eyebrow-teal::before { background: var(--teal2); }
+.eyebrow-dark { font-size: 10.5px; font-weight: 800; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.45); display: inline-flex; align-items: center; gap: 6px; }
+.eyebrow-dark::before { content: ''; width: 18px; height: 2px; background: rgba(255,255,255,0.3); border-radius: 2px; display: inline-block; }
+
+/* ── GRADIENT TEXT ── */
+.tg-purple { background: linear-gradient(135deg, #8B5CF6, #7C3AED); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.tg-teal   { background: linear-gradient(135deg, #10B981, #059669); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.tg-mix    { background: linear-gradient(135deg, #8B5CF6 0%, #3B82F6 50%, #10B981 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.text-grad-purple { background: linear-gradient(135deg,#8B5CF6,#7C3AED); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+.text-grad-teal   { background: linear-gradient(135deg,#10B981,#059669); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+.text-grad-mix    { background: linear-gradient(135deg,#8B5CF6 0%,#3B82F6 50%,#10B981 100%); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+
+/* ── CHIPS ── */
+.chip { display: inline-flex; align-items: center; gap: 5px; font-size: 0.69rem; font-weight: 700; letter-spacing: 0.04em; padding: 3px 11px; border-radius: 100px; }
+.chip-purple { background: rgba(139,92,246,0.08); color: #7C3AED; border: 1px solid rgba(139,92,246,0.18); }
+.chip-teal   { background: rgba(16,185,129,0.08);  color: #059669; border: 1px solid rgba(16,185,129,0.18); }
+.chip-blue   { background: rgba(59,130,246,0.08);  color: #2563EB; border: 1px solid rgba(59,130,246,0.18); }
+.chip-amber  { background: rgba(245,158,11,0.08);  color: #B45309; border: 1px solid rgba(245,158,11,0.18); }
+.chip-dark   { background: rgba(255,255,255,0.07); color: rgba(255,255,255,0.6); border: 1px solid rgba(255,255,255,0.1); }
+.chip-red    { background: rgba(239,68,68,0.08);   color: #DC2626; border: 1px solid rgba(239,68,68,0.18); }
+
+/* ── CARDS ── */
+.card { background: #fff; border: 1px solid var(--border); border-radius: var(--r-xl); transition: all 0.25s ease; }
+.card:hover { box-shadow: var(--shadow-lg); transform: translateY(-2px); border-color: rgba(139,92,246,0.2); }
+.card-surface { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-xl); transition: all 0.25s ease; }
+.card-dark { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.07); border-radius: var(--r-xl); transition: all 0.25s ease; }
+.card-dark:hover { background: rgba(255,255,255,0.07); border-color: rgba(139,92,246,0.25); }
+
+/* ── SECTION SPACING ── */
+.section    { padding: 88px 0; }
+.section-sm { padding: 64px 0; }
+.section-lg { padding: 112px 0; }
+
+/* ── SECTION DIVIDER ── */
+.s-divider { height: 1px; background: linear-gradient(90deg, transparent, var(--border), transparent); }
+.s-divider-dark { height: 1px; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.06), transparent); }
+
+/* ── ANIMATIONS ── */
+@keyframes floatY  { 0%,100%{ transform:translateY(0); } 50%{ transform:translateY(-14px); } }
+@keyframes floatY2 { 0%,100%{ transform:translateY(0); } 50%{ transform:translateY(-9px);  } }
+@keyframes floatY3 { 0%,100%{ transform:translateY(0); } 50%{ transform:translateY(8px);   } }
+@keyframes rotateSlow  { from{ transform:rotate(0deg);   } to{ transform:rotate(360deg);   } }
+@keyframes ping-dot    { 0%,100%{ transform:scale(1); opacity:1; } 50%{ transform:scale(1.7); opacity:0.3; } }
+@keyframes shimmer     { 0%{ background-position:-400px 0; } 100%{ background-position:400px 0; } }
+@keyframes gradShift   { 0%,100%{ background-position:0% 50%; } 50%{ background-position:100% 50%; } }
+@keyframes capGlow     { 0%,100% { box-shadow: 0 0 0 0 rgba(139,92,246,0); } 50% { box-shadow: 0 0 0 6px rgba(139,92,246,0.06); } }
+
+.float-1 { animation: floatY  6s ease-in-out infinite; }
+.float-2 { animation: floatY2 8s ease-in-out infinite 0.8s; }
+.float-3 { animation: floatY3 5s ease-in-out infinite 1.6s; }
+.rotate-slow     { animation: rotateSlow 24s linear infinite; }
+.rotate-slow-rev { animation: rotateSlow 32s linear infinite reverse; }
+.ping-dot  { animation: ping-dot 2.4s ease-in-out infinite; }
+
+/* ── HERO DOT GRID ── */
+.dot-grid {
+  background-image: radial-gradient(rgba(139,92,246,0.1) 1px, transparent 1px);
+  background-size: 40px 40px;
+  mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, transparent 35%, black 100%);
+  -webkit-mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, transparent 35%, black 100%);
+}
+.hero-grid-bg { background-image: linear-gradient(rgba(255,255,255,0.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.025) 1px,transparent 1px); background-size:64px 64px; mask-image:radial-gradient(ellipse 90% 80% at 50% 50%,black 20%,transparent 80%); -webkit-mask-image:radial-gradient(ellipse 90% 80% at 50% 50%,black 20%,transparent 80%); }
+
+/* ── GRADIENT ANIMATED BG ── */
+.grad-anim {
+  background: linear-gradient(300deg, #FAFAFF, #F0EEFF, #EAF3FF, #F0FBF7, #FFFAF0, #FAFAFF);
+  background-size: 400% 400%;
+  animation: gradShift 18s ease infinite;
+}
+
+/* ── CAPABILITY CARD ── */
+.cap-card { position: relative; overflow: hidden; cursor: default; transition: all 0.3s ease; }
+.cap-card::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px; opacity: 0; transition: opacity 0.3s ease; }
+.cap-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+.cap-card:hover::after { opacity: 1; }
+
+/* ── DECORATIVE LINE ── */
+.deco-line { height: 1px; background: linear-gradient(90deg, transparent, rgba(139,92,246,0.25), rgba(16,185,129,0.15), transparent); }
+
+/* ── UTILITY EXTRAS ── */
+.line-clamp-2 { display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; }
+.line-clamp-3 { display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden; }
