@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from 'react'
+import { useRef, useEffect } from 'react'
 import { ArrowRight, Briefcase, Phone, Mail, MapPin, Clock } from 'lucide-react'
 import { useHeroAnimation, useScrollReveal } from '../hooks/useScrollReveal'
 import Container from '../components/ui/Container'
@@ -10,14 +10,14 @@ const PATHS = [
   { Icon: Mail, color: '#3B82F6', bg: 'rgba(59,130,246,0.08)', title: 'Email Us', body: <><span className="font-bold" style={{ color: 'var(--purple)' }}>hello@vyuhon.com</span> — we respond to every message personally within 2 hours.</>, cta: 'Open email →' },
 ]
 
-const INP_BASE = "w-full rounded-xl px-4 py-3 text-[0.875rem] outline-none transition-all duration-200"
-const INP_STYLE = { background: 'var(--surface)', border: '1px solid var(--border)', color: 'var(--ink)' }
-const onF = e => { e.target.style.borderColor = 'rgba(139,92,246,0.38)'; e.target.style.background = '#fff'; e.target.style.boxShadow = '0 0 0 3px rgba(139,92,246,0.07)' }
-const onB = e => { e.target.style.borderColor = 'var(--border)'; e.target.style.background = 'var(--surface)'; e.target.style.boxShadow = 'none' }
+// const INP_BASE = "w-full rounded-xl px-4 py-3 text-[0.875rem] outline-none transition-all duration-200"
+// const INP_STYLE = { background: 'var(--surface)', border: '1px solid var(--border)', color: 'var(--ink)' }
+// const onF = e => { e.target.style.borderColor = 'rgba(139,92,246,0.38)'; e.target.style.background = '#fff'; e.target.style.boxShadow = '0 0 0 3px rgba(139,92,246,0.07)' }
+// const onB = e => { e.target.style.borderColor = 'var(--border)'; e.target.style.background = 'var(--surface)'; e.target.style.boxShadow = 'none' }
 
 export default function Contact() {
-  const [form, setForm] = useState({ first: '', last: '', email: '', company: '', service: '', message: '' })
-  const [sent, setSent] = useState(false)
+  // const [form, setForm] = useState({ first: '', last: '', email: '', company: '', service: '', message: '' })
+  // const [sent, setSent] = useState(false)
   const heroRef = useHeroAnimation()
   const ref = useScrollReveal({ selector: '.cf', stagger: 0.08, y: 16 })
 
@@ -67,10 +67,10 @@ export default function Contact() {
       </section>
 
       <Container>
-        <div className="py-14 grid grid-cols-1 lg:grid-cols-[1fr_1.1fr] gap-10 xl:gap-16 items-start">
+        <div className="py-14 grid grid-cols-1 gap-10 xl:gap-16 items-start">
 
           {/* LEFT — contact paths + info */}
-          <div>
+          <div style={{ maxWidth: 560, margin: '0 auto' }}>
             <p className="cf body-lg mb-8" style={{ maxWidth: 440 }}>
               Whether you're exploring your first AI initiative or scaling an existing platform —
               we're ready to listen, advise, and partner.
@@ -106,90 +106,6 @@ export default function Contact() {
                 <div className="font-heading text-[0.85rem] font-bold text-ink">Bengaluru, India</div>
                 <div className="text-[0.74rem]" style={{ color: 'var(--ink-soft)' }}>Headquartered · Remote-first globally</div>
               </div>
-            </div>
-          </div>
-
-          {/* RIGHT — form */}
-          <div className="cf bg-white border rounded-[var(--r-2xl)] overflow-hidden"
-            style={{ borderColor: 'var(--border)', boxShadow: 'var(--shadow-lg)' }}>
-
-            {/* Form header accent */}
-            <div className="h-1" style={{ background: 'linear-gradient(90deg,#8B5CF6,#3B82F6,#10B981)' }} />
-
-            <div className="p-8 md:p-10">
-              {sent ? (
-                <div className="text-center py-12">
-                  <div className="w-16 h-16 rounded-full mx-auto mb-5 flex items-center justify-center text-2xl"
-                    style={{ background: 'rgba(16,185,129,0.1)' }}>✓</div>
-                  <h3 className="display-sm text-ink mb-2">Message sent!</h3>
-                  <p className="body-sm">We'll get back to you within one business day.</p>
-                </div>
-              ) : (
-                <>
-                  <h3 className="display-sm text-ink mb-1.5">Send us a message</h3>
-                  <p className="body-sm mb-7">Every message is read and responded to personally.</p>
-
-                  <form onSubmit={e => { e.preventDefault(); setSent(true) }} className="space-y-4">
-                    <div className="grid grid-cols-2 gap-3">
-                      <div>
-                        <label className="block text-[0.76rem] font-semibold mb-1.5" style={{ color: 'var(--ink-mid)' }}>First name</label>
-                        <input required value={form.first} onChange={e => setForm({ ...form, first: e.target.value })}
-                          className={INP_BASE} style={INP_STYLE} onFocus={onF} onBlur={onB} placeholder="Alex" />
-                      </div>
-                      <div>
-                        <label className="block text-[0.76rem] font-semibold mb-1.5" style={{ color: 'var(--ink-mid)' }}>Last name</label>
-                        <input required value={form.last} onChange={e => setForm({ ...form, last: e.target.value })}
-                          className={INP_BASE} style={INP_STYLE} onFocus={onF} onBlur={onB} placeholder="Chen" />
-                      </div>
-                    </div>
-
-                    <div>
-                      <label className="block text-[0.76rem] font-semibold mb-1.5" style={{ color: 'var(--ink-mid)' }}>Work email</label>
-                      <input required type="email" value={form.email} onChange={e => setForm({ ...form, email: e.target.value })}
-                        className={INP_BASE} style={INP_STYLE} onFocus={onF} onBlur={onB} placeholder="alex@company.com" />
-                    </div>
-
-                    <div className="grid grid-cols-2 gap-3">
-                      <div>
-                        <label className="block text-[0.76rem] font-semibold mb-1.5" style={{ color: 'var(--ink-mid)' }}>Company</label>
-                        <input value={form.company} onChange={e => setForm({ ...form, company: e.target.value })}
-                          className={INP_BASE} style={INP_STYLE} onFocus={onF} onBlur={onB} placeholder="Acme Corp" />
-                      </div>
-                      <div>
-                        <label className="block text-[0.76rem] font-semibold mb-1.5" style={{ color: 'var(--ink-mid)' }}>Service interest</label>
-                        <select value={form.service} onChange={e => setForm({ ...form, service: e.target.value })}
-                          className={INP_BASE} style={{ ...INP_STYLE, cursor: 'pointer' }} onFocus={onF} onBlur={onB}>
-                          <option value="">Select one…</option>
-                          <option>AI Strategy & Advisory</option>
-                          <option>LLM Engineering</option>
-                          <option>MLOps & Infrastructure</option>
-                          <option>Data Platform</option>
-                          <option>AI Product Engineering</option>
-                          <option>Responsible AI</option>
-                          <option>Academy / Training</option>
-                          <option>Others</option>
-                        </select>
-                      </div>
-                    </div>
-
-                    <div>
-                      <label className="block text-[0.76rem] font-semibold mb-1.5" style={{ color: 'var(--ink-mid)' }}>How can we help?</label>
-                      <textarea required rows={4} value={form.message} onChange={e => setForm({ ...form, message: e.target.value })}
-                        className={`${INP_BASE} resize-y`} style={{ ...INP_STYLE, minHeight: 96 }}
-                        onFocus={onF} onBlur={onB} placeholder="Tell us about your project or challenge…" />
-                    </div>
-
-                    <button type="submit"
-                      className="w-full flex items-center justify-center gap-2 py-3.5 rounded-full font-semibold text-[0.9rem] text-white transition-all duration-200 hover:-translate-y-px"
-                      style={{ background: 'linear-gradient(135deg,#8B5CF6,#7C3AED)', boxShadow: 'var(--shadow-p)' }}>
-                      Send Message <ArrowRight size={15} />
-                    </button>
-                    <p className="text-center text-[0.71rem]" style={{ color: 'var(--ink-muted)' }}>
-                      Your privacy is respected. No spam, ever.
-                    </p>
-                  </form>
-                </>
-              )}
             </div>
           </div>
         </div>
