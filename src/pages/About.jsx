@@ -22,18 +22,18 @@ const TEAM = [
 
     gradA: '#10B981', gradB: '#059669',
   },
-  // {
-  //   initials: 'LK',
-  //   name: 'Lavanya Konda',
-  //   role: 'CFO',
-  //   bio: 'Lavanya brings deep expertise in technology and finance, helping drive the company to the next level. With a strong understanding of the tech industry and strategic financial management, she plays a key role in shaping growth, innovation, and long-term vision.',
+  {
+    initials: 'LK',
+    name: 'Lavanya K',
+    role: 'CFO',
+    bio: 'Lavanya brings deep expertise in technology and finance, helping drive the company to the next level. With a strong understanding of the tech industry and strategic financial management, she plays a key role in shaping growth, innovation, and long-term vision.',
 
-  //   gradA: '#F43F5E', gradB: '#E11D48',
-  // },
+    gradA: '#F43F5E', gradB: '#E11D48',
+  },
   {
     initials: 'JG',
     name: 'Jagadeesh S',
-    role: 'CP&PO',
+    role: 'CPPO',
     image: '/team-jagadeesh.png',
     bio: 'Chief Product & People Officer. Bridges product management, project execution, and people operations, ensuring Vyuhon teams are aligned and building toward the right outcomes.',
 
@@ -163,7 +163,7 @@ export default function About() {
               <div className="eyebrow mb-4">Founding Team</div>
               <h2 className="display-md text-ink">The people behind Vyuhon</h2>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 max-w-5xl mx-auto gap-x-8 gap-y-10">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 max-w-7xl mx-auto gap-x-6 gap-y-10">
               {TEAM.map((t, i) => (
                 <div key={i} className="s3 group relative cursor-default"
                   onMouseEnter={e => {
