@@ -9,7 +9,7 @@ const TEAM = [
     initials: 'DD',
     name: 'Dinesh Doddaga',
     role: 'Co-Founder & CEO',
-    image: '/team-dinesh-v3.jpeg',
+    image: '/team-dinesh-v4.jpeg',
     bio: 'Designer and Product Manager with a sharp eye for user experience. Leads the product vision at Vyuhon, translating complex AI capabilities into intuitive, human-centred interfaces.',
 
     gradA: '#8B5CF6', gradB: '#7C3AED',
