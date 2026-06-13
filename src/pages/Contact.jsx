@@ -5,9 +5,9 @@ import Container from '../components/ui/Container'
 import SEO from '../components/SEO'
 
 const PATHS = [
-  { Icon: Briefcase, color: '#8B5CF6', bg: 'rgba(139,92,246,0.08)', title: 'Start a Project', body: "Share what you're building and we'll put together a proposal within 48 hours.", cta: 'Send brief →' },
-  { Icon: Phone, color: '#10B981', bg: 'rgba(16,185,129,0.08)', title: 'Book a Discovery Call', body: 'Free 60-minute conversation to explore your AI opportunities — no obligation.', cta: 'Schedule call →' },
-  { Icon: Mail, color: '#3B82F6', bg: 'rgba(59,130,246,0.08)', title: 'Email Us', body: <><span className="font-bold" style={{ color: 'var(--purple)' }}>hello@vyuhon.com</span> — we respond to every message personally within 2 hours.</>, cta: 'Open email →' },
+  { Icon: Briefcase, color: '#8B5CF6', bg: 'rgba(139,92,246,0.08)', title: 'Start a Project', body: "Share what you're building and we'll put together a proposal within 48 hours.", cta: 'Send brief →', href: 'mailto:hello@vyuhon.com' },
+  { Icon: Phone, color: '#10B981', bg: 'rgba(16,185,129,0.08)', title: 'Book a Discovery Call', body: 'Free 60-minute conversation to explore your AI opportunities — no obligation.', cta: 'Schedule call →', href: 'https://calendar.app.google/Xfnc45qzXofR5Z4Z9', target: '_blank' },
+  { Icon: Mail, color: '#3B82F6', bg: 'rgba(59,130,246,0.08)', title: 'Email Us', body: <><span className="font-bold" style={{ color: 'var(--purple)' }}>hello@vyuhon.com</span> — we respond to every message personally within 2 hours.</>, cta: 'Open email →', href: 'mailto:hello@vyuhon.com' },
 ]
 
 // const INP_BASE = "w-full rounded-xl px-4 py-3 text-[0.875rem] outline-none transition-all duration-200"
@@ -78,23 +78,29 @@ export default function Contact() {
 
             {/* Contact path cards */}
             <div className="space-y-3 mb-8">
-              {PATHS.map(({ Icon, color, bg, title, body, cta }, i) => (
-                <div key={i}
-                  className="cf flex items-start gap-4 p-5 bg-white rounded-[var(--r-xl)] border cursor-pointer transition-all duration-250"
-                  style={{ borderColor: 'var(--border)' }}
-                  onMouseEnter={e => { e.currentTarget.style.borderColor = `${color}30`; e.currentTarget.style.boxShadow = 'var(--shadow-md)'; e.currentTarget.style.transform = 'translateX(4px)'; }}
-                  onMouseLeave={e => { e.currentTarget.style.borderColor = 'var(--border)'; e.currentTarget.style.boxShadow = 'none'; e.currentTarget.style.transform = ''; }}>
-                  <div className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0"
-                    style={{ background: bg }}>
-                    <Icon size={18} color={color} />
-                  </div>
-                  <div className="flex-1">
-                    <div className="font-heading text-[0.9rem] font-bold text-ink mb-1">{title}</div>
-                    <p className="body-sm">{body}</p>
-                  </div>
-                  <span className="text-[0.75rem] font-semibold flex-shrink-0 self-center" style={{ color }}>{cta}</span>
-                </div>
-              ))}
+              {PATHS.map(({ Icon, color, bg, title, body, cta, href, target }, i) => {
+                const Wrapper = href ? 'a' : 'div'
+                return (
+                  <Wrapper key={i}
+                    href={href}
+                    target={target}
+                    rel={target === '_blank' ? 'noopener noreferrer' : undefined}
+                    className="cf flex items-start gap-4 p-5 bg-white rounded-[var(--r-xl)] border cursor-pointer transition-all duration-250 block"
+                    style={{ borderColor: 'var(--border)', textDecoration: 'none' }}
+                    onMouseEnter={e => { e.currentTarget.style.borderColor = `${color}30`; e.currentTarget.style.boxShadow = 'var(--shadow-md)'; e.currentTarget.style.transform = 'translateX(4px)'; }}
+                    onMouseLeave={e => { e.currentTarget.style.borderColor = 'var(--border)'; e.currentTarget.style.boxShadow = 'none'; e.currentTarget.style.transform = ''; }}>
+                    <div className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0"
+                      style={{ background: bg }}>
+                      <Icon size={18} color={color} />
+                    </div>
+                    <div className="flex-1">
+                      <div className="font-heading text-[0.9rem] font-bold text-ink mb-1">{title}</div>
+                      <p className="body-sm text-ink-soft">{body}</p>
+                    </div>
+                    <span className="text-[0.75rem] font-semibold flex-shrink-0 self-center" style={{ color }}>{cta}</span>
+                  </Wrapper>
+                )
+              })}
             </div>
 
             {/* Location badge */}
