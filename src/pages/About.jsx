@@ -16,29 +16,29 @@ const TEAM = [
   },
   {
     initials: 'SD',
-    name: 'Subhash Doddaga',
+    name: 'Subhash',
     role: 'Co-Founder & CTO',
     bio: 'Engineer at heart with a strong technical foundation spanning AI, full-stack development, and engineering leadership. Architects the decisions that make Vyuhon systems reliable.',
 
     gradA: '#10B981', gradB: '#059669',
   },
-  {
-    initials: 'LK',
-    name: 'Lavanya K',
-    role: 'CFO',
-    bio: 'Lavanya brings deep expertise in technology and finance, helping drive the company to the next level. With a strong understanding of the tech industry and strategic financial management, she plays a key role in shaping growth, innovation, and long-term vision.',
+  // {
+  //   initials: 'LK',
+  //   name: 'Lavanya K',
+  //   role: 'CFO',
+  //   bio: 'Lavanya brings deep expertise in technology and finance, helping drive the company to the next level. With a strong understanding of the tech industry and strategic financial management, she plays a key role in shaping growth, innovation, and long-term vision.',
 
-    gradA: '#F43F5E', gradB: '#E11D48',
-  },
-  {
-    initials: 'JG',
-    name: 'Jagadeesh S',
-    role: 'CPPO',
-    image: '/team-jagadeesh.png',
-    bio: 'Chief Product & People Officer. Bridges product management, project execution, and people operations, ensuring Vyuhon teams are aligned and building toward the right outcomes.',
+  //   gradA: '#F43F5E', gradB: '#E11D48',
+  // },
+  // {
+  //   initials: 'JG',
+  //   name: 'Jagadeesh S',
+  //   role: 'CPPO',
+  //   image: '/team-jagadeesh.png',
+  //   bio: 'Chief Product & People Officer. Bridges product management, project execution, and people operations, ensuring Vyuhon teams are aligned and building toward the right outcomes.',
 
-    gradA: '#3B82F6', gradB: '#2563EB',
-  },
+  //   gradA: '#3B82F6', gradB: '#2563EB',
+  // },
 ]
 
 const VALUES = [
@@ -163,9 +163,9 @@ export default function About() {
               <div className="eyebrow mb-4">Founding Team</div>
               <h2 className="display-md text-ink">The people behind Vyuhon</h2>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 max-w-7xl mx-auto gap-x-6 gap-y-10">
+            <div className="flex flex-wrap justify-center max-w-7xl mx-auto gap-x-8 lg:gap-x-16 gap-y-10">
               {TEAM.map((t, i) => (
-                <div key={i} className="s3 group relative cursor-default"
+                <div key={i} className="s3 group relative cursor-default w-full sm:w-[calc(50%-2rem)] max-w-[320px]"
                   onMouseEnter={e => {
                     const nameEl = e.currentTarget.querySelector('h3');
                     if (nameEl) nameEl.style.color = t.gradA;
