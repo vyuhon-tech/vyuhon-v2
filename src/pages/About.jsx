@@ -156,7 +156,7 @@ export default function About() {
           </Container>
         </section>
 
-        {/* TEAM */}
+        {/* TEAM
         <section className="section bg-white" ref={s3}>
           <Container>
             <div className="text-center max-w-[460px] mx-auto mb-16">
@@ -194,6 +194,7 @@ export default function About() {
             </div>
           </Container>
         </section>
+        */}
       </div>
 
       <CTABanner
